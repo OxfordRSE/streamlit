@@ -1,3 +1,0 @@
-# Streamlit Workshop
-
-Start.
