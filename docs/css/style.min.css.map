@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "style.min.css",
-	"sourceRoot": "/home/fergus/GitRepos/OxfordRSE/streamlit/site",
+	"sourceRoot": "/home/runner/work/streamlit/streamlit/site",
 	"sources": [
 		"themes/LoveIt/assets/css/style.scss",
 		"themes/LoveIt/assets/css/_variables.scss",
