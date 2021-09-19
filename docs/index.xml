@@ -27,8 +27,9 @@ Second 2 Some more text.]]></description>
     <pubDate>Tue, 07 Sep 2021 00:00:00 &#43;0100</pubDate>
     <author>Author</author>
     <guid>https://oxfordrse.github.io/streamlit/posts/building_something_useful/</guid>
-    <description><![CDATA[Section 1 Some text.
-Second 2 Some more text.]]></description>
+    <description><![CDATA[We&rsquo;re now ready to build something useful! The plan is to build an interactive app for displaying and exploring statistical distributions.
+Distribution selector Imports We are going to draw charts, use data frames, and interact with Scipy&rsquo;s stats module, so first, starting from a blank slate, we need to import the following modules:
+import altair as alt import numpy as np import pandas as pd import streamlit as st import scipy.]]></description>
 </item><item>
     <title>Adding interactivity</title>
     <link>https://oxfordrse.github.io/streamlit/posts/adding_interactivity/</link>
