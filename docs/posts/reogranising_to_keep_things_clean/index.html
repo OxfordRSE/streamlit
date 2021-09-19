@@ -6,8 +6,9 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>Keeping things clean - Streamlit workshop</title><meta name="Description" content=""><meta property="og:title" content="Keeping things clean" />
-<meta property="og:description" content="Section 1 Some text.
-Second 2 Some more text." />
+<meta property="og:description" content="So far so good! We have an app displaying statistical distributions. A user can select the distribution and move sliders to change parameter values.
+The main problem is we now have a single python file with a few hundred lines of code. Not the end of the world, yet, but there are dozens of distributions we might want to add. Things could quickly get out of hand!
+Move functionality to a module What do we need to keep?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://oxfordrse.github.io/streamlit/posts/reogranising_to_keep_things_clean/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-09-08T00:00:00+01:00" />
@@ -15,8 +16,9 @@ Second 2 Some more text." />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Keeping things clean"/>
-<meta name="twitter:description" content="Section 1 Some text.
-Second 2 Some more text."/>
+<meta name="twitter:description" content="So far so good! We have an app displaying statistical distributions. A user can select the distribution and move sliders to change parameter values.
+The main problem is we now have a single python file with a few hundred lines of code. Not the end of the world, yet, but there are dozens of distributions we might want to add. Things could quickly get out of hand!
+Move functionality to a module What do we need to keep?"/>
 <meta name="application-name" content="Streamlit workshop">
 <meta name="apple-mobile-web-app-title" content="Streamlit workshop"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,7 +31,7 @@ Second 2 Some more text."/>
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/oxfordrse.github.io\/streamlit\/posts\/reogranising_to_keep_things_clean\/"
-        },"genre": "posts","wordcount":  9 ,
+        },"genre": "posts","wordcount":  527 ,
         "url": "https:\/\/oxfordrse.github.io\/streamlit\/posts\/reogranising_to_keep_things_clean\/","datePublished": "2021-09-08T00:00:00+01:00","dateModified": "2021-09-19T00:00:00+01:00","publisher": {
             "@type": "Organization",
             "name": "Author"},"author": {
@@ -79,8 +81,8 @@ Second 2 Some more text."/>
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Keeping things clean</h1><h2 class="single-subtitle">Keep app code clean by moving functionality to libraries</h2><div class="post-meta">
             <div class="post-meta-line">
-                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;9 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;527 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -88,14 +90,169 @@ Second 2 Some more text."/>
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#section-1">Section 1</a></li>
-    <li><a href="#second-2">Second 2</a></li>
+    <li><a href="#move-functionality-to-a-module">Move functionality to a module</a>
+      <ul>
+        <li><a href="#what-do-we-need-to-keep">What do we need to keep?</a></li>
+        <li><a href="#creating-a-module">Creating a module</a></li>
+      </ul>
+    </li>
+    <li><a href="#use-the-module-from-our-app">Use the module from our app</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h2 id="section-1">Section 1</h2>
-<p>Some text.</p>
-<h2 id="second-2">Second 2</h2>
-<p>Some more text.</p>
+            </div><div class="content" id="content"><p>So far so good!
+We have an app displaying statistical distributions.
+A user can select the distribution and move sliders to change parameter values.</p>
+<p>The main problem is we now have a single python file with a few hundred lines of code.
+Not the end of the world, yet, but there are dozens of distributions we might want to add.
+Things could quickly get out of hand!</p>
+<h2 id="move-functionality-to-a-module">Move functionality to a module</h2>
+<h3 id="what-do-we-need-to-keep">What do we need to keep?</h3>
+<p>The high level flow of an app should be kept in <code>app.py</code>.
+It is certainly useful for the developer to see a good overview of how the app works in the main Python file.</p>
+<p>All of the code specific to the normal distribution, however, can be moved.</p>
+<h3 id="creating-a-module">Creating a module</h3>
+<p>Let&rsquo;s create a Python module called <code>distributions</code>.
+This consists of a directory <code>distributions</code> with at least one file, <code>__init__.py</code>.
+We will also create another file for each distribution in our app.</p>
+<p>Create a directory and a files so that the Git repository top level directory contains:</p>
+<pre tabindex="0"><code>repository_root/
+├── app.py
+├── distributions/
+    └── __init__.py
+    └── normal.py
+</code></pre><p>In the file <code>__init__.py</code>, paste the following code:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">.normal</span> <span class="kn">import</span> <span class="n">normal_distribution</span>
+</code></pre></div><p>and in <code>normal.py</code> we will put all the Normal-specific functionality from the last section:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+
+<span class="kn">import</span> <span class="nn">scipy.stats</span>
+
+
+<span class="k">def</span> <span class="nf">normal_distribution</span><span class="p">():</span>
+    <span class="n">param_range</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span><span class="s1">&#39;Range&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">20.0</span><span class="p">,</span> <span class="n">min_value</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">max_value</span><span class="o">=</span><span class="mf">100.0</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%.1f</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">param_mean</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span><span class="s1">&#39;Mean&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">min_value</span><span class="o">=-</span><span class="mf">30.0</span><span class="p">,</span> <span class="n">max_value</span><span class="o">=</span><span class="mf">30.0</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%.1f</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">param_std</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span><span class="s1">&#39;Standard deviation&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">min_value</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">max_value</span><span class="o">=</span><span class="mf">20.0</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%.1f</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="o">=-</span><span class="n">param_range</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="n">param_range</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="n">st</span><span class="o">.</span><span class="n">expander</span><span class="p">(</span><span class="s1">&#39;Plot of PDF&#39;</span><span class="p">,</span> <span class="n">expanded</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">param_mean</span><span class="p">,</span> <span class="n">param_std</span><span class="p">)</span>
+        <span class="n">pdf_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">({</span>
+            <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span>
+            <span class="s1">&#39;probability density&#39;</span><span class="p">:</span> <span class="n">y</span><span class="p">,</span>
+        <span class="p">})</span>
+        <span class="n">line_chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">pdf_data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+            <span class="n">x</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span>
+            <span class="n">y</span><span class="o">=</span><span class="s1">&#39;probability density&#39;</span><span class="p">,</span>
+            <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;probability density&#39;</span><span class="p">],</span>
+        <span class="p">)</span>
+        <span class="n">st</span><span class="o">.</span><span class="n">altair_chart</span><span class="p">(</span><span class="n">line_chart</span><span class="o">.</span><span class="n">interactive</span><span class="p">(),</span> <span class="n">use_container_width</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="n">st</span><span class="o">.</span><span class="n">expander</span><span class="p">(</span><span class="s1">&#39;Plot of CDF&#39;</span><span class="p">,</span> <span class="n">expanded</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">param_mean</span><span class="p">,</span> <span class="n">param_std</span><span class="p">)</span>
+        <span class="n">cdf_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">({</span>
+            <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span>
+            <span class="s1">&#39;cumulative density&#39;</span><span class="p">:</span> <span class="n">y</span><span class="p">,</span>
+        <span class="p">})</span>
+        <span class="n">line_chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cdf_data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+            <span class="n">x</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span>
+            <span class="n">y</span><span class="o">=</span><span class="s1">&#39;cumulative density&#39;</span><span class="p">,</span>
+            <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;cumulative density&#39;</span><span class="p">],</span>
+        <span class="p">)</span>
+        <span class="n">st</span><span class="o">.</span><span class="n">altair_chart</span><span class="p">(</span><span class="n">line_chart</span><span class="o">.</span><span class="n">interactive</span><span class="p">(),</span> <span class="n">use_container_width</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="n">st</span><span class="o">.</span><span class="n">expander</span><span class="p">(</span><span class="s1">&#39;Formulae&#39;</span><span class="p">,</span> <span class="n">expanded</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="n">st</span><span class="o">.</span><span class="n">markdown</span><span class="p">(</span><span class="n">formulae_text</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="n">st</span><span class="o">.</span><span class="n">expander</span><span class="p">(</span><span class="s1">&#39;LaTeX&#39;</span><span class="p">,</span> <span class="n">expanded</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="n">st</span><span class="o">.</span><span class="n">markdown</span><span class="p">(</span><span class="n">latex_text</span><span class="p">)</span>
+
+
+<span class="n">formulae_text</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;&#39;&#39;Parameters:
+</span><span class="s1">- mean: $\mu\in\mathbb</span><span class="si">{R}</span><span class="s1">$
+</span><span class="s1">- standard deviation: $\sigma\in\mathbb</span><span class="si">{R}</span><span class="s1">^+$
+</span><span class="s1">---
+</span><span class="s1">Support:
+</span><span class="s1">- $x\in\mathbb</span><span class="si">{R}</span><span class="s1">$
+</span><span class="s1">---
+</span><span class="s1">Moments:
+</span><span class="s1">- $\mathrm</span><span class="si">{E}</span><span class="s1">(X) = \mu$
+</span><span class="s1">- $\mathrm</span><span class="si">{Var}</span><span class="s1">(X) = \sigma^2$
+</span><span class="s1">---
+</span><span class="s1">Probability density function (PDF):
+</span><span class="s1">
+</span><span class="s1">$$
+</span><span class="s1">f(x|\mu,\sigma) = \frac</span><span class="si">{1}</span><span class="s1">{\sqrt{2\pi\sigma^2}}\text</span><span class="si">{exp}</span><span class="s1">\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)
+</span><span class="s1">$$
+</span><span class="s1">---
+</span><span class="s1">Cumulative distribution function (CDF):
+</span><span class="s1">
+</span><span class="s1">$$
+</span><span class="s1">F(x|\mu,\sigma) = \frac</span><span class="si">{1}{2}</span><span class="s1">\left[1+\text</span><span class="si">{erf}</span><span class="s1">\left(\frac{x-\mu}{\sigma\sqrt</span><span class="si">{2}</span><span class="s1">}\right)\right]
+</span><span class="s1">$$
+</span><span class="s1">
+</span><span class="s1">where
+</span><span class="s1">
+</span><span class="s1">$$
+</span><span class="s1">\text</span><span class="si">{erf}</span><span class="s1">(x) = \frac</span><span class="si">{2}</span><span class="s1">{\sqrt{\pi}}\int_</span><span class="si">{0}</span><span class="s1">^</span><span class="si">{x}</span><span class="s1"> e^{-t^2}\mathrm</span><span class="si">{d}</span><span class="s1">t
+</span><span class="s1">$$
+</span><span class="s1">is the error function.
+</span><span class="s1">&#39;&#39;&#39;</span>
+
+<span class="n">latex_text</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;&#39;&#39;Moments:
+</span><span class="s1">```latex
+</span><span class="s1">\mathrm</span><span class="si">{E}</span><span class="s1">(X) = \mu
+</span><span class="s1">```
+</span><span class="s1">```latex
+</span><span class="s1">\mathrm</span><span class="si">{Var}</span><span class="s1">(X) = \sigma^2
+</span><span class="s1">```
+</span><span class="s1">---
+</span><span class="s1">Probability density function (PDF):
+</span><span class="s1">```latex
+</span><span class="s1">f(x|\mu,\sigma) = \frac</span><span class="si">{1}</span><span class="s1">{\sqrt{2\pi\sigma^2}}\text</span><span class="si">{exp}</span><span class="s1">\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)
+</span><span class="s1">```
+</span><span class="s1">---
+</span><span class="s1">Cumulative distribution function (CDF):
+</span><span class="s1">```latex
+</span><span class="s1">F(x|\mu,\sigma) = \frac</span><span class="si">{1}{2}</span><span class="s1">\left[1+\text</span><span class="si">{erf}</span><span class="s1">\left(\frac{x-\mu}{\sigma\sqrt</span><span class="si">{2}</span><span class="s1">}\right)\right]
+</span><span class="s1">```
+</span><span class="s1">where
+</span><span class="s1">```latex
+</span><span class="s1">\text</span><span class="si">{erf}</span><span class="s1">(x) = \frac</span><span class="si">{2}</span><span class="s1">{\sqrt{\pi}}\int_</span><span class="si">{0}</span><span class="s1">^</span><span class="si">{x}</span><span class="s1"> e^{-t^2}\mathrm</span><span class="si">{d}</span><span class="s1">t
+</span><span class="s1">```
+</span><span class="s1">is the error function.
+</span><span class="s1">&#39;&#39;&#39;</span></code></pre></div>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>Note<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">By organising the Normal distribution code into a function, we can also put our long raw strings at the bottom of the file which really helps keep the code neat.</div>
+        </div>
+    </div>
+<h2 id="use-the-module-from-our-app">Use the module from our app</h2>
+<p>Now that the Normal distribution functionality is in a separate module, we can simply import it and call the new function:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+
+<span class="kn">from</span> <span class="nn">distributions</span> <span class="kn">import</span> <span class="n">normal_distribution</span>
+
+
+<span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Statistical distributions&#39;</span><span class="p">)</span>
+
+<span class="n">dist_selector</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">selectbox</span><span class="p">(</span>
+    <span class="s2">&#34;Pick a distribution:&#34;</span><span class="p">,</span>
+    <span class="p">(</span><span class="s2">&#34;Beta&#34;</span><span class="p">,</span> <span class="s2">&#34;Normal&#34;</span><span class="p">),</span>
+    <span class="n">index</span><span class="o">=</span><span class="mi">1</span>
+<span class="p">)</span>
+
+<span class="n">st</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="n">dist_selector</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">dist_selector</span> <span class="o">==</span> <span class="s1">&#39;Normal&#39;</span><span class="p">:</span>
+    <span class="n">normal_distribution</span><span class="p">()</span>
+</code></pre></div><p>The entire app is now little more than a dropdown box and a function call.</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">

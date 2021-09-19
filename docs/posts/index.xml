@@ -17,8 +17,9 @@ Second 2 Some more text.]]></description>
     <pubDate>Wed, 08 Sep 2021 00:00:00 &#43;0100</pubDate>
     <author>Author</author>
     <guid>https://oxfordrse.github.io/streamlit/posts/reogranising_to_keep_things_clean/</guid>
-    <description><![CDATA[Section 1 Some text.
-Second 2 Some more text.]]></description>
+    <description><![CDATA[So far so good! We have an app displaying statistical distributions. A user can select the distribution and move sliders to change parameter values.
+The main problem is we now have a single python file with a few hundred lines of code. Not the end of the world, yet, but there are dozens of distributions we might want to add. Things could quickly get out of hand!
+Move functionality to a module What do we need to keep?]]></description>
 </item><item>
     <title>Building something useful</title>
     <link>https://oxfordrse.github.io/streamlit/posts/building_something_useful/</link>
