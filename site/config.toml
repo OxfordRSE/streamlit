@@ -16,7 +16,7 @@ theme = "LoveIt"
     pre = ""
     # you can add extra information after the name (HTML format is supported), such as icons
     post = ""
-    name = "Posts"
+    name = "Sections"
     url = "posts"
     # title will be shown when you hover on this menu link
     title = ""
@@ -82,3 +82,11 @@ theme = "LoveIt"
   scale = true
   # whether to add FullscreenControl
   fullscreen = true
+
+[params.page.toc]
+  # whether to enable the table of the contents
+  enable = true
+  # LoveIt NEW | 0.2.9 whether to keep the static table of the contents in front of the post
+  keepStatic = true
+  # whether to make the table of the contents in the sidebar automatically collapsed
+  auto = false
