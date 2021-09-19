@@ -164,3 +164,13 @@ st.sidebar.write("Adding text to the sidebar...")
 ```
 
 We now know everything we need in order to make something useful!
+
+{{< admonition type="note" open=true >}}
+Make sure you add and commit these changes to Git and push to GitHub.
+
+```bash
+git add -all
+git commit -m "commit message"
+git push
+```
+{{< /admonition >}}

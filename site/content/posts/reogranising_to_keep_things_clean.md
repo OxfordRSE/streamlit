@@ -199,3 +199,14 @@ if dist_selector == 'Normal':
 ```
 
 The entire app is now little more than a dropdown box and a function call.
+
+
+{{< admonition type="note" open=true >}}
+Don't forget to add and commit all changes to Git and push to GitHub.
+
+```bash
+git add -all
+git commit -m "commit message"
+git push
+```
+{{< /admonition >}}

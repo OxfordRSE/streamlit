@@ -199,6 +199,17 @@ is the error function.
 ''')
 {{< / highlight >}}
 
+
+{{< admonition type="note" open=true >}}
+Make sure you add and commit these changes to Git and push to GitHub.
+
+```bash
+git add -all
+git commit -m "commit message"
+git push
+```
+{{< /admonition >}}
+
 ## Exercise
 
 Add a similar set of expanders for a second distribution.

@@ -140,3 +140,14 @@ If not, copy-and-paste the "Local URL" into your browser.
 
 You should see an empty app with your title visible in the middle of the screen.
 Your first Streamlit app!
+
+
+{{< admonition type="note" open=true >}}
+Make sure you add and commit these new files to Git and push to GitHub.
+
+```bash
+git add -all
+git commit -m "commit message"
+git push
+```
+{{< /admonition >}}
