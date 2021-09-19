@@ -11,7 +11,7 @@ linkToMarkdown: true
 toc:
   enable: true
   keepStatic: false
-  auto: true
+  auto: false
 code:
   copy: true
 math:
