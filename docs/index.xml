@@ -35,8 +35,9 @@ Second 2 Some more text.]]></description>
     <pubDate>Mon, 06 Sep 2021 00:00:00 &#43;0100</pubDate>
     <author>Author</author>
     <guid>https://oxfordrse.github.io/streamlit/posts/adding_interactivity/</guid>
-    <description><![CDATA[Section 1 Some text.
-Second 2 Some more text.]]></description>
+    <description><![CDATA[Notice how we did not have to write any boilerplate to get a working Streamlit app? Streamlit repeatedly re-runs the entire file app.py, so the entire app file is being looped over and over. This means you (as the app developer) do not have to handle any event loops or callbacks yourself.
+Too add something more interesting to the app, we could take a quick look at:
+ the Streamlit getting started documentation.]]></description>
 </item><item>
     <title>A first app</title>
     <link>https://oxfordrse.github.io/streamlit/posts/a_first_app/</link>
