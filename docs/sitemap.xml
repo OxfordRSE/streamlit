@@ -2,7 +2,14 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://oxfordrse.github.io/streamlit/</loc><priority>0</priority></url><url>
+            <loc>https://oxfordrse.github.io/streamlit/</loc><lastmod>2021-09-19T00:00:00&#43;01:00</lastmod><priority>1</priority></url><url>
+            <loc>https://oxfordrse.github.io/streamlit/posts/deploying_your_app/</loc><lastmod>2021-09-19T00:00:00&#43;01:00</lastmod></url><url>
+            <loc>https://oxfordrse.github.io/streamlit/posts/</loc><lastmod>2021-09-19T00:00:00&#43;01:00</lastmod></url><url>
+            <loc>https://oxfordrse.github.io/streamlit/posts/reogranising_to_keep_things_clean/</loc><lastmod>2021-09-19T00:00:00&#43;01:00</lastmod></url><url>
+            <loc>https://oxfordrse.github.io/streamlit/posts/building_something_useful/</loc><lastmod>2021-09-19T00:00:00&#43;01:00</lastmod></url><url>
+            <loc>https://oxfordrse.github.io/streamlit/posts/adding_interactivity/</loc><lastmod>2021-09-19T00:00:00&#43;01:00</lastmod></url><url>
+            <loc>https://oxfordrse.github.io/streamlit/posts/a_first_app/</loc><lastmod>2021-09-19T00:00:00&#43;01:00</lastmod></url><url>
+            <loc>https://oxfordrse.github.io/streamlit/posts/prerequisites/</loc><lastmod>2021-09-19T00:00:00&#43;01:00</lastmod></url><url>
             <loc>https://oxfordrse.github.io/streamlit/about/</loc><priority>0</priority></url><url>
             <loc>https://oxfordrse.github.io/streamlit/glossary/</loc><priority>0</priority></url><url>
             <loc>https://oxfordrse.github.io/streamlit/categories/</loc></url><url>
