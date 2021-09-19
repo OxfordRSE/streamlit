@@ -4,11 +4,11 @@
         <link>https://oxfordrse.github.io/streamlit/posts/</link>
         <description>All Posts | Streamlit workshop</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 09 Sep 2021 00:00:00 &#43;0100</lastBuildDate><atom:link href="https://oxfordrse.github.io/streamlit/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>Deploying your app</title>
-    <link>https://oxfordrse.github.io/streamlit/posts/deploying_your_app/</link>
+    <title>Deploying a Streamlit app</title>
+    <link>https://oxfordrse.github.io/streamlit/posts/deploying_a_streamlit_app/</link>
     <pubDate>Thu, 09 Sep 2021 00:00:00 &#43;0100</pubDate>
     <author>Author</author>
-    <guid>https://oxfordrse.github.io/streamlit/posts/deploying_your_app/</guid>
+    <guid>https://oxfordrse.github.io/streamlit/posts/deploying_a_streamlit_app/</guid>
     <description><![CDATA[Section 1 Some text.
 Second 2 Some more text.]]></description>
 </item><item>
@@ -41,8 +41,9 @@ Second 2 Some more text.]]></description>
     <pubDate>Sun, 05 Sep 2021 00:00:00 &#43;0100</pubDate>
     <author>Author</author>
     <guid>https://oxfordrse.github.io/streamlit/posts/a_first_app/</guid>
-    <description><![CDATA[Section 1 Some text.
-Second 2 Some more text.]]></description>
+    <description><![CDATA[In this section we will create an empty GitHub repository, clone it, and create an extremely basic Streamlit app that we will be able to view in a web browser.
+The app will not do much at all, but once we have completed this checkpoint we will be set up with everything we need for the rest of the workshop.
+Set up a repository to work with Create a Github repository Create a new repository on GitHub.]]></description>
 </item><item>
     <title>Prerequisites</title>
     <link>https://oxfordrse.github.io/streamlit/posts/prerequisites/</link>

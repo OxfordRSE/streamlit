@@ -6,8 +6,9 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>A first app - Streamlit workshop</title><meta name="Description" content=""><meta property="og:title" content="A first app" />
-<meta property="og:description" content="Section 1 Some text.
-Second 2 Some more text." />
+<meta property="og:description" content="In this section we will create an empty GitHub repository, clone it, and create an extremely basic Streamlit app that we will be able to view in a web browser.
+The app will not do much at all, but once we have completed this checkpoint we will be set up with everything we need for the rest of the workshop.
+Set up a repository to work with Create a Github repository Create a new repository on GitHub." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://oxfordrse.github.io/streamlit/posts/a_first_app/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-09-05T00:00:00+01:00" />
@@ -15,8 +16,9 @@ Second 2 Some more text." />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="A first app"/>
-<meta name="twitter:description" content="Section 1 Some text.
-Second 2 Some more text."/>
+<meta name="twitter:description" content="In this section we will create an empty GitHub repository, clone it, and create an extremely basic Streamlit app that we will be able to view in a web browser.
+The app will not do much at all, but once we have completed this checkpoint we will be set up with everything we need for the rest of the workshop.
+Set up a repository to work with Create a Github repository Create a new repository on GitHub."/>
 <meta name="application-name" content="Streamlit workshop">
 <meta name="apple-mobile-web-app-title" content="Streamlit workshop"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,7 +31,7 @@ Second 2 Some more text."/>
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/oxfordrse.github.io\/streamlit\/posts\/a_first_app\/"
-        },"genre": "posts","wordcount":  9 ,
+        },"genre": "posts","wordcount":  412 ,
         "url": "https:\/\/oxfordrse.github.io\/streamlit\/posts\/a_first_app\/","datePublished": "2021-09-05T00:00:00+01:00","dateModified": "2021-09-19T00:00:00+01:00","publisher": {
             "@type": "Organization",
             "name": "Author"},"author": {
@@ -76,11 +78,11 @@ Second 2 Some more text."/>
 <main class="main">
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
-            <div class="toc-content" id="toc-content-auto"></div>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">A first app</h1><h2 class="single-subtitle">Create and run a Streamlit app locally</h2><div class="post-meta">
             <div class="post-meta-line">
-                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;9 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;412 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -88,14 +90,92 @@ Second 2 Some more text."/>
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#section-1">Section 1</a></li>
-    <li><a href="#second-2">Second 2</a></li>
+    <li><a href="#set-up-a-repository-to-work-with">Set up a repository to work with</a>
+      <ul>
+        <li><a href="#create-a-github-repository">Create a Github repository</a></li>
+        <li><a href="#clone-the-repository">Clone the repository</a></li>
+      </ul>
+    </li>
+    <li><a href="#set-up-a-python-environment-to-work-with">Set up a Python environment to work with</a>
+      <ul>
+        <li><a href="#create-a-python-virtual-environment">Create a Python virtual environment</a></li>
+        <li><a href="#update-the-basic-python-modules">Update the basic Python modules</a></li>
+      </ul>
+    </li>
+    <li><a href="#install-required-python-packages">Install required Python packages</a>
+      <ul>
+        <li><a href="#create-a-requirements-file">Create a requirements file</a></li>
+        <li><a href="#install-the-requirements">Install the requirements</a></li>
+      </ul>
+    </li>
+    <li><a href="#build-and-run-a-basic-streamlit-app">Build and run a basic streamlit app</a>
+      <ul>
+        <li><a href="#create-a-python-file">Create a python file</a></li>
+        <li><a href="#run-the-streamlit-app">Run the streamlit app</a></li>
+      </ul>
+    </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h2 id="section-1">Section 1</h2>
-<p>Some text.</p>
-<h2 id="second-2">Second 2</h2>
-<p>Some more text.</p>
+            </div><div class="content" id="content"><p>In this section we will create an empty GitHub repository, clone it, and create an extremely basic Streamlit app that we will be able to view in a web browser.</p>
+<p>The app will not do much at all, but once we have completed this checkpoint we will be set up with everything we need for the rest of the workshop.</p>
+<h2 id="set-up-a-repository-to-work-with">Set up a repository to work with</h2>
+<h3 id="create-a-github-repository">Create a Github repository</h3>
+<p>Create a new repository on <a href="https://github.com/" target="_blank" rel="noopener noreffer">GitHub</a>.
+Make sure that:</p>
+<ul>
+<li>the repository is <strong>public</strong></li>
+<li>tick &ldquo;Add a README file&rdquo;</li>
+<li>tick &ldquo;Add .gitignore&rdquo; (recommended) and select Python</li>
+<li>tick &ldquo;Choose a license&rdquo; (recommended) and select your preferred license</li>
+</ul>
+<p>Click &ldquo;Create repository&rdquo;.</p>
+<h3 id="clone-the-repository">Clone the repository</h3>
+<p>Clone the repository to your computer either using Git on the command line, or using your preferred Git client.</p>
+<p>If using Git on the command line, navigate to the directory you want to use and type:</p>
+<pre tabindex="0"><code>git clone https://github.com/&lt;your-github-usernam&gt;/&lt;your-repository-name&gt;.git
+</code></pre><h2 id="set-up-a-python-environment-to-work-with">Set up a Python environment to work with</h2>
+<h3 id="create-a-python-virtual-environment">Create a Python virtual environment</h3>
+<p>From the command line, navigate to the directory you cloned your repository to.
+Create a <a href="https://docs.python.org/3/tutorial/venv.html" target="_blank" rel="noopener noreffer">virtual environment</a>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">python3 -m venv venv
+</code></pre></div><p>Activate the virtual environment.
+On Windows, run:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">activate</span><span class="p">.</span><span class="n">bat</span>
+</code></pre></div><p>On Linux and macOS run:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">source</span> venv/bin/activate
+</code></pre></div><h3 id="update-the-basic-python-modules">Update the basic Python modules</h3>
+<p>Run the following command to make sure the environment is up to date:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">python3 -m pip install --upgrade pip setuptools wheel
+</code></pre></div><h2 id="install-required-python-packages">Install required Python packages</h2>
+<h3 id="create-a-requirements-file">Create a requirements file</h3>
+<p>We will be using several Python packages during this workshop and we may as well install all of them now.
+To do that we will create an empty file <code>requirements.txt</code> in the base directory of the Git repository.
+Open that file in your text editor.</p>
+<p>In that file, put the following Python packages:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt">altair
+numpy
+pandas
+scipy
+streamlit
+</code></pre></div><h3 id="install-the-requirements">Install the requirements</h3>
+<p>To install all the requirements specified in the file we just created, run:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">python3 -m pip install -r requirements.txt
+</code></pre></div><h2 id="build-and-run-a-basic-streamlit-app">Build and run a basic streamlit app</h2>
+<h3 id="create-a-python-file">Create a python file</h3>
+<p>Create an empty Python file <code>app.py</code> in the base directory of the Git repository.
+Open that file in your text editor.</p>
+<p>Add the following code.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+
+<span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;My first Streamlit app&#39;</span><span class="p">)</span>
+</code></pre></div><p>Save the file.</p>
+<h3 id="run-the-streamlit-app">Run the streamlit app</h3>
+<p>From the command line, run:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">streamlit run app.py 
+</code></pre></div><p>This should automatically load the app in your web browser.
+If not, copy-and-paste the &ldquo;Local URL&rdquo; into your browser.</p>
+<p>You should see an empty app with your title visible in the middle of the screen.
+Your first Streamlit app!</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
