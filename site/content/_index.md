@@ -23,6 +23,7 @@ Here are a few useful links that you might want to return to several times throu
 - [Streamlit homepage](https://streamlit.io/)
 - [Streamlit gallery](https://streamlit.io/gallery)
 - [Streamlit documentation](https://docs.streamlit.io/en/stable/)
+- [Streamlit API](https://docs.streamlit.io/en/stable/api.html)
 - [Streamlit API cheat sheet](https://share.streamlit.io/daniellewisdl/streamlit-cheat-sheet/app.py)
 
 
