@@ -6,8 +6,11 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>Prerequisites - Streamlit workshop</title><meta name="Description" content=""><meta property="og:title" content="Prerequisites" />
-<meta property="og:description" content="Section 1 Some text.
-Second 2 Some more text." />
+<meta property="og:description" content="There are a small number of tools you need in order to create and deploy Streamlit apps.
+Software Python Streamlit is a Python package, and requires Python 3.6&#43;. To verify you have an appropriate version of Python, run:
+python --version from a command line. If you see a Python 2 version then try
+python3 --version instead.
+Tip  If you are installing Python on Windows, make sure you tick the &ldquo;add to path&rdquo; option when presented." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://oxfordrse.github.io/streamlit/posts/prerequisites/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-09-04T00:00:00+01:00" />
@@ -15,8 +18,11 @@ Second 2 Some more text." />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Prerequisites"/>
-<meta name="twitter:description" content="Section 1 Some text.
-Second 2 Some more text."/>
+<meta name="twitter:description" content="There are a small number of tools you need in order to create and deploy Streamlit apps.
+Software Python Streamlit is a Python package, and requires Python 3.6&#43;. To verify you have an appropriate version of Python, run:
+python --version from a command line. If you see a Python 2 version then try
+python3 --version instead.
+Tip  If you are installing Python on Windows, make sure you tick the &ldquo;add to path&rdquo; option when presented."/>
 <meta name="application-name" content="Streamlit workshop">
 <meta name="apple-mobile-web-app-title" content="Streamlit workshop"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,7 +35,7 @@ Second 2 Some more text."/>
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/oxfordrse.github.io\/streamlit\/posts\/prerequisites\/"
-        },"genre": "posts","wordcount":  9 ,
+        },"genre": "posts","wordcount":  217 ,
         "url": "https:\/\/oxfordrse.github.io\/streamlit\/posts\/prerequisites\/","datePublished": "2021-09-04T00:00:00+01:00","dateModified": "2021-09-19T00:00:00+01:00","publisher": {
             "@type": "Organization",
             "name": "Author"},"author": {
@@ -79,8 +85,8 @@ Second 2 Some more text."/>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Prerequisites</h1><h2 class="single-subtitle">Getting everything set up</h2><div class="post-meta">
             <div class="post-meta-line">
-                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;9 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;217 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -88,14 +94,62 @@ Second 2 Some more text."/>
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#section-1">Section 1</a></li>
-    <li><a href="#second-2">Second 2</a></li>
+    <li><a href="#software">Software</a>
+      <ul>
+        <li><a href="#python">Python</a></li>
+        <li><a href="#any-text-editor">Any text editor</a></li>
+        <li><a href="#git">Git</a></li>
+      </ul>
+    </li>
+    <li><a href="#services">Services</a>
+      <ul>
+        <li><a href="#github">GitHub</a></li>
+        <li><a href="#heroku">Heroku</a></li>
+      </ul>
+    </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h2 id="section-1">Section 1</h2>
-<p>Some text.</p>
-<h2 id="second-2">Second 2</h2>
-<p>Some more text.</p>
+            </div><div class="content" id="content"><p>There are a small number of tools you need in order to create and deploy <a href="https://streamlit.io/" target="_blank" rel="noopener noreffer">Streamlit</a> apps.</p>
+<h2 id="software">Software</h2>
+<h3 id="python">Python</h3>
+<p>Streamlit is a Python package, and requires <a href="https://www.python.org/downloads/" target="_blank" rel="noopener noreffer">Python 3.6+</a>.
+To verify you have an appropriate version of Python, run:</p>
+<pre tabindex="0"><code>python --version
+</code></pre><p>from a command line.
+If you see a Python 2 version then try</p>
+<pre tabindex="0"><code>python3 --version
+</code></pre><p>instead.</p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>Tip<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">If you are installing Python on Windows, make sure you tick the &ldquo;add to path&rdquo; option when presented.</div>
+        </div>
+    </div>
+<h3 id="any-text-editor">Any text editor</h3>
+<p>We will be writing some Python code.
+Any text editor will will be absolutely fine, but a couple of recommendations are:</p>
+<ul>
+<li><a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreffer">Visual Studio Code</a></li>
+<li><a href="https://www.jetbrains.com/pycharm/download" target="_blank" rel="noopener noreffer">PyCharm Community</a></li>
+</ul>
+<h3 id="git">Git</h3>
+<p>We will be working with a Git repository hosted on <a href="https://github.com/" target="_blank" rel="noopener noreffer">GitHub</a>.
+You should make sure you have installed <a href="https://git-scm.com/" target="_blank" rel="noopener noreffer">Git</a>.
+You can either use Git from the command line, or use a graphical application such as</p>
+<ul>
+<li><a href="https://desktop.github.com/" target="_blank" rel="noopener noreffer">GitHub Desktop</a></li>
+<li><a href="https://www.gitkraken.com/" target="_blank" rel="noopener noreffer">GitKraken</a></li>
+</ul>
+<h2 id="services">Services</h2>
+<h3 id="github">GitHub</h3>
+<p>We will be using <a href="https://github.com/" target="_blank" rel="noopener noreffer">GitHub</a> to host a Git repository for this workshop.
+Please make sure you have a GitHub account and that you are logged in.</p>
+<h3 id="heroku">Heroku</h3>
+<p><a href="https://www.heroku.com/" target="_blank" rel="noopener noreffer">Heroku</a> is a cloud platform for hosting apps.
+We will be using Heroku to host our Streamlit apps so they are live for everyone on the internet to play with.
+Please make sure you have a Heroku account and that you are logged in.</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">

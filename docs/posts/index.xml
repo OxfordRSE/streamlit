@@ -49,7 +49,10 @@ Second 2 Some more text.]]></description>
     <pubDate>Sat, 04 Sep 2021 00:00:00 &#43;0100</pubDate>
     <author>Author</author>
     <guid>https://oxfordrse.github.io/streamlit/posts/prerequisites/</guid>
-    <description><![CDATA[Section 1 Some text.
-Second 2 Some more text.]]></description>
+    <description><![CDATA[There are a small number of tools you need in order to create and deploy Streamlit apps.
+Software Python Streamlit is a Python package, and requires Python 3.6+. To verify you have an appropriate version of Python, run:
+python --version from a command line. If you see a Python 2 version then try
+python3 --version instead.
+Tip  If you are installing Python on Windows, make sure you tick the &ldquo;add to path&rdquo; option when presented.]]></description>
 </item></channel>
 </rss>
