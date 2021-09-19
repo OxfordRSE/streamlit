@@ -31,7 +31,7 @@ Move functionality to a module What do we need to keep?"/>
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/oxfordrse.github.io\/streamlit\/posts\/reogranising_to_keep_things_clean\/"
-        },"genre": "posts","wordcount":  527 ,
+        },"genre": "posts","wordcount":  552 ,
         "url": "https:\/\/oxfordrse.github.io\/streamlit\/posts\/reogranising_to_keep_things_clean\/","datePublished": "2021-09-08T00:00:00+01:00","dateModified": "2021-09-19T00:00:00+01:00","publisher": {
             "@type": "Organization",
             "name": "Author"},"author": {
@@ -81,7 +81,7 @@ Move functionality to a module What do we need to keep?"/>
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Keeping things clean</h1><h2 class="single-subtitle">Keep app code clean by moving functionality to libraries</h2><div class="post-meta">
             <div class="post-meta-line">
-                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;527 words&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;552 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -253,6 +253,18 @@ We will also create another file for each distribution in our app.</p>
 <span class="k">if</span> <span class="n">dist_selector</span> <span class="o">==</span> <span class="s1">&#39;Normal&#39;</span><span class="p">:</span>
     <span class="n">normal_distribution</span><span class="p">()</span>
 </code></pre></div><p>The entire app is now little more than a dropdown box and a function call.</p>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>Note<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>Don&rsquo;t forget to add and commit all changes to Git and push to GitHub.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git add -all
+git commit -m <span class="s2">&#34;commit message&#34;</span>
+git push
+</code></pre></div></div>
+        </div>
+    </div>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">

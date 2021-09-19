@@ -9,8 +9,9 @@
     <pubDate>Thu, 09 Sep 2021 00:00:00 &#43;0100</pubDate>
     <author>Author</author>
     <guid>https://oxfordrse.github.io/streamlit/posts/deploying_a_streamlit_app/</guid>
-    <description><![CDATA[Section 1 Some text.
-Second 2 Some more text.]]></description>
+    <description><![CDATA[Deployment options Streamlit Cloud So far we have been viewing the app locally. We want to show the world!
+Streamlit can be easily deployed on a wide variety of cloud infrastructure; in fact, anywhere a Python app can be hosted. Streamlit provides a guide on how to deploy apps.
+Even better than that is Streamlit Cloud that makes it trivial to deploy public apps for free. Unfortunately you currently need to apply for an invite to the beta version of their service.]]></description>
 </item><item>
     <title>Keeping things clean</title>
     <link>https://oxfordrse.github.io/streamlit/posts/reogranising_to_keep_things_clean/</link>
