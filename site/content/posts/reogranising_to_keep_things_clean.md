@@ -198,7 +198,7 @@ if dist_selector == 'Normal':
     normal_distribution()
 ```
 
-The entire app is now little more than a dropdown box and a function call.
+The entire app is now little more than a dropdown box and a function call, and the functionality is now structured to make it much easier to expand and maintain.
 
 
 {{< admonition type="note" open=true >}}

@@ -212,4 +212,4 @@ git push
 
 ## Exercise
 
-Add a similar set of expanders for a second distribution.
+Add a similar set of expanders for a second distribution selectable from the sidebar.

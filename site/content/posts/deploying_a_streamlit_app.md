@@ -86,7 +86,12 @@ Follow these steps to deploy your Streamlit app:
 You should see a window showing the deployment happening.
 This may take a minute.
 
-When the process is finished, you should see 'Your app was successfully deployed': click 'View' to see it in action!
+{{< admonition type="success" open=true >}}
+When the process is finished, you should see 'Your app was successfully deployed'.
+
+Click 'View' to see it in action!
+{{< /admonition >}}
+
 
 ## Exercise
 
